@@ -4,6 +4,11 @@ const Productrouter = require('./app/product/router.js');
 const ProductrouterV2 = require('./app/product_v2/router.js');
 const logger = require('morgan');
 const app = express();
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT}`);
+});
 
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +23,6 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+// app.listen(3000, () => {
+//   console.log('Server is running on port 3000');
+// });
